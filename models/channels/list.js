@@ -1,4 +1,12 @@
 module.exports = (knex, Channel) => {
+  //async version
+  return async () => {
+    const channels = await knex("channels").select();
+    const mappedChannels = channels.map((channel) => new Channel(channel));
+
+    return Promise.resolve(mappedChannels);
+  };
+  /* Original Version
   return () => {
     return knex("channels")
       .select()
@@ -8,5 +16,5 @@ module.exports = (knex, Channel) => {
         });
       });
     // return Promise.resolve([]); // fix me!
-  };
+  };*/
 };

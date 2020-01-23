@@ -1,4 +1,4 @@
-exports.up = function(knex, Promise) {
+exports.up = function(knex) {
   return knex.schema.createTable("channel_messages", (t) => {
     t.increments() // auto-incrementing id column
       .index(); // index this column
@@ -21,6 +21,6 @@ exports.up = function(knex, Promise) {
   });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function(knex) {
   return knex.schema.dropTable("channel_messages");
 };

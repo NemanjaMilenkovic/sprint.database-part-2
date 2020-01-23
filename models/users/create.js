@@ -1,5 +1,6 @@
 const validateUsername = (uName) =>
   typeof uName === "string" && uName.replace(" ", "").length > 2;
+//note to self, return this as an async function
 
 module.exports = (knex, User) => {
   return (params) => {

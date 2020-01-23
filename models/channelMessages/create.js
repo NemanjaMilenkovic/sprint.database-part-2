@@ -17,6 +17,7 @@ module.exports = (knex, ChannelMessage) => {
       );
 
     //I found this to be helpful: https://dev.to/jamesliudotcc/how-to-use-async-await-with-map-and-promise-all-1gb5
+    //I'm also watching this: https://www.youtube.com/watch?v=CRq58VmlpQU&list=LL1UaSwA2t2-ZepvTWqNEUjA&index=3&t=0s
 
     const channelMessagesFinal = await Promise.all(
       allChannelMessages.map(async (message) => {
@@ -27,3 +28,5 @@ module.exports = (knex, ChannelMessage) => {
     return channelMessagesFinal;
   };
 };
+
+//Flag: need to find out how to async this

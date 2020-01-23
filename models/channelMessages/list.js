@@ -10,6 +10,7 @@ module.exports = (knex, ChannelMessage) => {
         "channels.name as to", //e.g. "To general"
         "users.username as from" //e.g. from rp-3
       );
+
     const channelMessagePromises = await Promise.all(
       allChannelMessages.map(async (message) => {
         return new ChannelMessage(message);

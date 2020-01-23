@@ -1,4 +1,4 @@
-exports.up = function(knex, Promise) {
+exports.up = function(knex) {
   //create channels table with two columns
   return knex.schema.createTable("channels", (t) => {
     t.increments() // auto-incrementing id column
@@ -11,7 +11,7 @@ exports.up = function(knex, Promise) {
   });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function(knex) {
   // undo this migration by destroying the 'channels' table
   return knex.schema.dropTable("channels");
 };
