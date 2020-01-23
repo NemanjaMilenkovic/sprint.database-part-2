@@ -4,7 +4,6 @@ module.exports = (knex, Channel) => {
       .select()
       .then((chan) => {
         return chan.map((chan) => {
-          console.log("chan :", chan);
           return new Channel(chan);
         });
       });
