@@ -2,9 +2,7 @@ const validateUsername = (uName) =>
   typeof uName === "string" && uName.replace(" ", "").length > 2;
 
 module.exports = (knex, User) => {
-  return (params) => {
-    const username = params.username;
-
+  return ({ username }) => {
     if (!validateUsername(username)) {
       return Promise.reject(
         new Error("Username must be provided, and be at least two characters")
